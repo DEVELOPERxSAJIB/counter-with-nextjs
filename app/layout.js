@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import colors from "colors";
 import store from "@/store/store";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
