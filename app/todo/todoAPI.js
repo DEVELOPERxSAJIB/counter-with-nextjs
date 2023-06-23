@@ -12,6 +12,12 @@ export const fatchAllTodos = createAsyncThunk(
 
 // create new todo
 export const createTodo = createAsyncThunk("todo/createTodo", async (data) => {
-  const response = await axios.post(`http://localhost:3000/api/todo`, data)
-  return response.data.todo
-})
+  const response = await axios.post(`http://localhost:3000/api/todo`, data);
+  return response.data.todo;
+});
+
+// delete todo
+export const deleteTodo = createAsyncThunk("todo/deleteTodo", async () => {
+  await axios.delete(`http://localhost:3000/api/todo?id=${data}`);
+  return id;
+});

@@ -35,9 +35,10 @@ export const DELETE = async (request) => {
 
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("id");
-    
-    const data = await Todo.findByIdAndDelete(id);
-    return NextResponse.json({ data });
+
+    const todo = await Todo.findByIdAndDelete(id);
+
+    return NextResponse.json({ todo, msg : "deleted data successfully" });
 
   } catch (error) {
     return NextResponse.json({ error: error.message });

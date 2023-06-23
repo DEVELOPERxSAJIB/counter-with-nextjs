@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTodo, fatchAllTodos } from "./todoAPI";
+import { createTodo, deleteTodo, fatchAllTodos } from "./todoAPI";
 import { selectTodo } from "./todoSlice";
 
 const TodoPage = () => {
@@ -28,7 +28,7 @@ const TodoPage = () => {
   };
 
   const handleDeleteItem = (id) => {
-    
+    dispatch(deleteTodo(id))
   }
 
   useEffect(() => {
